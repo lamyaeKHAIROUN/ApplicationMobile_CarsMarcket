@@ -59,6 +59,8 @@ public class MyAdsAdapter extends FirebaseRecyclerAdapter<Ad,MyAdsAdapter.myview
             }
         });
 
+
+        //update ad
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,7 +79,7 @@ public class MyAdsAdapter extends FirebaseRecyclerAdapter<Ad,MyAdsAdapter.myview
                 final EditText cityUpdate=myview.findViewById(R.id.inputCityUpdate);
                 final Switch switchUpdate=myview.findViewById(R.id.switchRentalUpdate);
 
-
+                //update an ad
                 Button submit=myview.findViewById(R.id.btnUpdate);
 
                 brandUpdate.setText(ad.getCarBrand());
@@ -100,10 +102,10 @@ public class MyAdsAdapter extends FirebaseRecyclerAdapter<Ad,MyAdsAdapter.myview
 
                 }
 
-
+                //show update panel
                 dialogPlus.show();
 
-
+                //valider la modification
                 submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -134,10 +136,11 @@ public class MyAdsAdapter extends FirebaseRecyclerAdapter<Ad,MyAdsAdapter.myview
 
             }});
 
-
+        //delete ad
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 AlertDialog.Builder builder=new AlertDialog.Builder(holder.imageCar.getContext());
                 builder.setTitle("Delete Panel");
                 builder.setMessage("Delete...?");
@@ -162,6 +165,8 @@ public class MyAdsAdapter extends FirebaseRecyclerAdapter<Ad,MyAdsAdapter.myview
         });
     }
 
+
+    //liaision avec l'item.xml
     @NonNull
     @Override
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
