@@ -17,7 +17,6 @@
             app:title="Car marcket"
             android:textStyle="bold"
             android:textSize="20dp"
-
             app:menu="@menu/main_menu"
             app:titleTextColor="@color/white"
             style="@style/TextAppearance.Material3.BodyLarge"

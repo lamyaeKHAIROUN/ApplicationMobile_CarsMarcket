@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/itemCard"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:elevation="8dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:id="@+id/relHolder"
+        android:layout_width="411dp"
+        android:layout_height="153dp"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/imageofcar"
+            android:layout_width="122dp"
+            android:layout_height="146dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/textBrand"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/imageofcar"
+            android:text="This is car brande"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textModel"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/textBrand"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/imageofcar"
+            android:text="This is car model"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/textPrice"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/textModel"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/imageofcar"
+            android:text="This is car price"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

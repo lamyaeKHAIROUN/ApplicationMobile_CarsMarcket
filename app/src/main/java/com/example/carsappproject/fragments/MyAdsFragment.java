@@ -62,6 +62,9 @@ public class MyAdsFragment extends Fragment {
         recview=view.findViewById(R.id.recviewAds);
         recview.setLayoutManager(new LinearLayoutManager(getContext()));
 
+
+
+
         FirebaseRecyclerOptions<Ad> options =
                 new FirebaseRecyclerOptions.Builder<Ad>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Ads"), Ad.class)

@@ -39,8 +39,10 @@ import java.util.Map;
 public class MyAdapter extends FirebaseRecyclerAdapter<Ad,MyAdapter.myviewholder>
 {
 
+    FirebaseRecyclerOptions<Ad> backup;
     public MyAdapter(@NonNull FirebaseRecyclerOptions<Ad> options) {
         super(options);
+
     }
 
     @Override
@@ -59,113 +61,13 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Ad,MyAdapter.myviewholder
             }
         });
 
-        holder.edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final DialogPlus dialogPlus=DialogPlus.newDialog(holder.imageCar.getContext())
-                        .setContentHolder(new ViewHolder(R.layout.update))
-                        .setExpanded(true,1100)
-                        .create();
 
-                View myview=dialogPlus.getHolderView();
-                final TextView imageUpdate=myview.findViewById(R.id.AddImagesUpdate);
-                final EditText brandUpdate=myview.findViewById(R.id.carbrandEUpdate);
-                final EditText modelUpdate=myview.findViewById(R.id.inputModelUpdate);
-                final EditText priceUpdate=myview.findViewById(R.id.inputEnergyUpdate);
-                final EditText registrationNUpdate=myview.findViewById(R.id.inputpriceEUpdate);
-               // final ImageView imageViewUpdate=myview.findViewById(R.id.inputCityUpdate);
-                final EditText cityUpdate=myview.findViewById(R.id.inputCityUpdate);
-                final Switch switchUpdate=myview.findViewById(R.id.switchRentalUpdate);
-
-
-                Button submit=myview.findViewById(R.id.btnUpdate);
-
-                brandUpdate.setText(ad.getCarBrand());
-                modelUpdate.setText(ad.getCarModel());
-                priceUpdate.setText(ad.getRegistrationNumber());
-                registrationNUpdate.setText(ad.getPrice());
-                cityUpdate.setText(ad.getCity());
-                Boolean forRental=ad.isForRental();
-                if(forRental){
-                    switchUpdate.setChecked(true);
-                    if(switchUpdate.isChecked()){
-                    ad.setForRental(true);}
-                    else ad.setForRental(false);
-                }
-                else { switchUpdate.setChecked(false);
-                    ad.setForRental(false);
-                    if(switchUpdate.isChecked()){
-                        ad.setForRental(true);}
-                    else ad.setForRental(false);
-
-                }
-
-
-                dialogPlus.show();
-
-
-                submit.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Map<String,Object> map=new HashMap<>();
-                        map.put("carBrand",brandUpdate.getText().toString());
-                        map.put("carModel",modelUpdate.getText().toString());
-                        map.put("registrationNumber",registrationNUpdate.getText().toString());
-                        map.put("price",priceUpdate.getText().toString());
-
-                        FirebaseDatabase.getInstance().getReference().child("Ads")
-                                .child(getRef(position).getKey()).updateChildren(map)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        dialogPlus.dismiss();
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        dialogPlus.dismiss();
-                                    }
-                                });
-                    }
-                });
-
-
-
-            }});
-
-
-        holder.delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder=new AlertDialog.Builder(holder.imageCar.getContext());
-                builder.setTitle("Delete Panel");
-                builder.setMessage("Delete...?");
-
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        FirebaseDatabase.getInstance().getReference().child("Ads")
-                                .child(getRef(position).getKey()).removeValue();
-                    }
-                });
-
-                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                    }
-                });
-
-                builder.show();
-            }
-        });
     }
 
     @NonNull
     @Override
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_without_options,parent,false);
         return new myviewholder(view);
     }
 
@@ -174,8 +76,8 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Ad,MyAdapter.myviewholder
         TextView brand , modle , email,registrationNumber,price,city;
         ImageView imageCar;
         RelativeLayout relativeLayout;
-        ImageView edit;
-        ImageView delete;
+       // ImageView edit;
+       // ImageView delete;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -185,8 +87,8 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Ad,MyAdapter.myviewholder
             price = itemView.findViewById(R.id.textPrice);
             imageCar=itemView.findViewById(R.id.imageofcar);
 
-            edit=(ImageView)itemView.findViewById(R.id.editicon);
-            delete=(ImageView)itemView.findViewById(R.id.deleteicon);
+           // edit=(ImageView)itemView.findViewById(R.id.editicon);
+           // delete=(ImageView)itemView.findViewById(R.id.deleteicon);
 
 
 

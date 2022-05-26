@@ -65,6 +65,7 @@ public class RecyclerFragment extends Fragment {
         return view;
     }
 
+
     @Override
     public void onStart() {
         super.onStart();
@@ -82,5 +83,15 @@ public class RecyclerFragment extends Fragment {
         FragmentManager fragmentManager = getParentFragmentManager();
         int fragmentTransaction = fragmentManager.beginTransaction().replace(R.id.FrameConatiner, fragment).commit();
     }
+    public void processSearch(String s) {
 
+        FirebaseRecyclerOptions<Ad> options =
+                new FirebaseRecyclerOptions.Builder<Ad>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Ads").startAt(s).endAt(s+"\uf8ff"), Ad.class)
+                        .build();
+
+        MyAdapter adapter=new MyAdapter(options);
+        adapter.startListening();
+        recview.setAdapter(adapter);
+    }
     }

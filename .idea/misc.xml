@@ -16,6 +16,7 @@
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/drawable/round_border.xml" value="0.1585" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/drawable/wave.xml" value="0.162" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/activity_ad_car.xml" value="0.25" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/activity_bayer_home.xml" value="0.18" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/activity_login.xml" value="0.26685393258426965" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/activity_main.xml" value="0.22" />
@@ -32,7 +33,9 @@
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/home_2.xml" value="0.25" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/item.xml" value="0.22" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/item2.xml" value="0.2" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/item_without_options.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/layout/update.xml" value="0.25" />
+        <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/menu/bayer_home_menu.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/SCD UM/AndroidStudioProjects/CarsAppProject/app/src/main/res/menu/main_menu.xml" value="0.1675929884566054" />
       </map>

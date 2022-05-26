@@ -3,6 +3,8 @@ package com.example.carsappproject.fragments;
 
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,10 +13,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.carsappproject.AdCarActivity;
+import com.example.carsappproject.Home;
 import com.example.carsappproject.R;
 
 public class DescriptionFragment extends Fragment {
@@ -26,6 +31,9 @@ public class DescriptionFragment extends Fragment {
     private String mParam2;
     private String brand, model, price,registrationNumber,city, purl;
     private boolean forRental;
+
+    Button btnCall;
+
     public DescriptionFragment() {
 
     }
@@ -65,6 +73,7 @@ public class DescriptionFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -73,7 +82,7 @@ public class DescriptionFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view=inflater.inflate(R.layout.fragment_description, container, false);
-
+        btnCall=view.findViewById(R.id.btnCall);
         ImageView imageholder=view.findViewById(R.id.imagegholder);
         TextView brandholder=view.findViewById(R.id.brandholder);
         TextView modelholder=view.findViewById(R.id.modelholder);
@@ -92,6 +101,14 @@ public class DescriptionFragment extends Fragment {
 
         }
         Glide.with(getContext()).load(purl).into(imageholder);
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Intent i= new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+"+33612345"));
+            startActivity(i);
+            }
+        });
+
 
         return  view;
     }

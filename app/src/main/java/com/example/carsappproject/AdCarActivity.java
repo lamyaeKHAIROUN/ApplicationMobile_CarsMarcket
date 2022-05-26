@@ -12,6 +12,7 @@ import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ public class AdCarActivity extends AppCompatActivity {
     private DatabaseReference myRef;
     private String userID;
     private FirebaseAuth mAuth;
+    private ImageView back;
     //vars
     private DatabaseReference root = FirebaseDatabase.getInstance().getReference("Ads");
     private StorageReference reference = FirebaseStorage.getInstance().getReference();
@@ -53,7 +55,7 @@ public class AdCarActivity extends AppCompatActivity {
         price=findViewById(R.id.inputpriceEUpdate);
         city=findViewById(R.id.inputCityUpdate);
         aSwitchRental=findViewById(R.id.switchRentalUpdate);
-
+        back=findViewById(R.id.imageback);
         uploadBtn = findViewById(R.id.btnUpdate);
         ///showAllBtn = findViewById(R.id.showall_btn);
         progressBar = findViewById(R.id.progressBarAdd);
@@ -75,6 +77,14 @@ public class AdCarActivity extends AppCompatActivity {
                 galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
                 galleryIntent.setType("image/*");
                 startActivityForResult(galleryIntent , 2);
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(AdCarActivity.this, Home.class);
+                startActivity(intent2);
             }
         });
 
