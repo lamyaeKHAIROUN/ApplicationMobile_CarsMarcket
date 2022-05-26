@@ -11,6 +11,6 @@ tools:context=".fragments.RecyclerFragment">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recview"
         android:layout_width="match_parent"
-        android:layout_height="329dp"
+        android:layout_height="532dp"
         android:layout_gravity="bottom" />
 </FrameLayout>

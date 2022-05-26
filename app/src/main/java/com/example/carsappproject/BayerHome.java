@@ -55,8 +55,7 @@ public class BayerHome extends AppCompatActivity {
                     case R.id.profile_item :
                         temp=new ProfileFragment();
                         break;
-                    case R.id.search_item : temp=new RecyclerFragment();
-                        break;
+
                     case R.id.logout :
                         Intent intent = new Intent(BayerHome.this, LoginActivity.class);
                         startActivity(intent);
@@ -75,29 +74,6 @@ public class BayerHome extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.bottom_nav_menu,menu);
 
-       /* MenuItem item=menu.findItem(R.id.search_item);
-
-        SearchView searchView=(SearchView)item.getActionView();
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                temp=new RecyclerFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.FrameConatiner,temp).commit();
-
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                temp=new RecyclerFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.FrameConatiner,temp).commit();
-
-                //processsearch(s);
-                return false;
-            }
-        });*/
-
         return true;
     }
 
@@ -113,16 +89,6 @@ public class BayerHome extends AppCompatActivity {
         return super.onContextItemSelected(item);
     }
 
-    public void processSearch(String s) {
 
-        FirebaseRecyclerOptions<Ad> options =
-                new FirebaseRecyclerOptions.Builder<Ad>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Ads").orderByChild("carBrand").startAt(s).endAt(s+"\uf8ff"), Ad.class)
-                        .build();
-
-        MyAdapter adapter=new MyAdapter(options);
-        adapter.startListening();
-        recview.setAdapter(adapter);
-    }
 
 }

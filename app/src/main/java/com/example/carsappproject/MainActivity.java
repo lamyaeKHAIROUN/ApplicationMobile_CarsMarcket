@@ -22,10 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         database = FirebaseDatabase.getInstance();
-        //DatabaseReference myRef = database.getReference("hi");
 
-        //myRef.setValue("Hello, World!");
-        // Toast.makeText(getApplicationContext(),"succes",Toast.LENGTH_LONG);
+
 
          btn1 = (Button) findViewById(R.id.getstarted);
 

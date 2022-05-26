@@ -92,10 +92,10 @@
         android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/Topview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintHorizontal_bias="0.949"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_person"
         tools:ignore="MissingConstraints" />
 
@@ -106,7 +106,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="32dp"
         android:text="Login"
-        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="40sp"
         android:textStyle="bold"

@@ -1,16 +1,20 @@
 package com.example.carsappproject.fragments;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import com.example.carsappproject.Entities.Ad;
 import com.example.carsappproject.R;
 import com.example.carsappproject.adapters.MyAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.FirebaseDatabase;
 
 
@@ -50,13 +54,13 @@ public class RecyclerFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view=inflater.inflate(R.layout.fragment_recycler, container, false);
-
         recview=view.findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        String s = "";
         FirebaseRecyclerOptions<Ad> options =
                 new FirebaseRecyclerOptions.Builder<Ad>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Ads"), Ad.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference("Ads").orderByChild("carBrand").startAt(s).endAt(s+"\uf8ff"), Ad.class)
                         .build();
 
         adapter=new MyAdapter(options);
@@ -87,11 +91,11 @@ public class RecyclerFragment extends Fragment {
 
         FirebaseRecyclerOptions<Ad> options =
                 new FirebaseRecyclerOptions.Builder<Ad>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Ads").startAt(s).endAt(s+"\uf8ff"), Ad.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference("Ads").orderByChild("carBrand").startAt(s).endAt(s+"\uf8ff"), Ad.class)
                         .build();
 
         MyAdapter adapter=new MyAdapter(options);
-        adapter.startListening();
+        //adapter.startListening();
         recview.setAdapter(adapter);
     }
     }

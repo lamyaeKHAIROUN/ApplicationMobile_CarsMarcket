@@ -147,12 +147,5 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-   /* private void showData(DataSnapshot dataSnapshot) {
-        for(DataSnapshot ds : dataSnapshot.getChildren()){
-            User uInfo = new User();
-            String userRole=ds.child(userID).getValue(User.class).getUserRole();
-            if(userRole.equals("1"));
 
-        }
-    }*/
 }

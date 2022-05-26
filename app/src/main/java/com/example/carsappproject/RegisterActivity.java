@@ -157,19 +157,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                      }
                  });
-                        // send verification link
-                       /* FirebaseUser fuser = mAuth.getCurrentUser();
-                        fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(RegisterActivity.this, "Verification Email Has been Sent.", Toast.LENGTH_SHORT).show();
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.d(TAG, "onFailure: Email not sent " + e.getMessage());
-                            }
-                        });*/
+
                         }
                 }
             });

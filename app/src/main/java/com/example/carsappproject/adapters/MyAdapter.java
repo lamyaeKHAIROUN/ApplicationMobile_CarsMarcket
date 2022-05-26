@@ -76,8 +76,7 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Ad,MyAdapter.myviewholder
         TextView brand , modle , email,registrationNumber,price,city;
         ImageView imageCar;
         RelativeLayout relativeLayout;
-       // ImageView edit;
-       // ImageView delete;
+
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -87,8 +86,7 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Ad,MyAdapter.myviewholder
             price = itemView.findViewById(R.id.textPrice);
             imageCar=itemView.findViewById(R.id.imageofcar);
 
-           // edit=(ImageView)itemView.findViewById(R.id.editicon);
-           // delete=(ImageView)itemView.findViewById(R.id.deleteicon);
+
 
 
 

@@ -51,13 +51,13 @@ public class MyAdsAdapter extends FirebaseRecyclerAdapter<Ad,MyAdsAdapter.myview
         //set image
         Glide.with(holder.imageCar.getContext()).load(ad.getUrlImage()).into(holder.imageCar);
 
-        holder.imageCar.setOnClickListener(new View.OnClickListener() {
+      /*  holder.imageCar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AppCompatActivity activity=(AppCompatActivity)view.getContext();
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.FrameConatiner,new DescriptionFragment(ad.getCarBrand(),ad.getCarModel(),ad.getPrice(),ad.getRegistrationNumber(),ad.getCity(),ad.isForRental(), ad.getUrlImage())).addToBackStack(null).commit();
             }
-        });
+        });*/
 
 
         //update ad

@@ -33,7 +33,32 @@
         android:layout_height="664dp"
         android:layout_above="@+id/bottombar_nav"
         android:layout_gravity="center"
-        android:background="@color/cardview_shadow_start_color" />
+        android:background="@color/cardview_shadow_start_color" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="@android:dimen/app_icon_size">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_gravity="top"
+                android:background="@color/backG"
+                android:gravity="center"
+                android:text="You can finde all ads here"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                tools:ignore="RtlCompat">
+
+            </TextView>
+        </FrameLayout>
+
+    </FrameLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottombar_nav"
